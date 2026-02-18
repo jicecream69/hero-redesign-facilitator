@@ -274,118 +274,44 @@
             border-color: rgba(255, 255, 255, 0.4);
         }
 
-        /* ========== FEATURED PROGRAM CARD ========== */
-        .featured-program {
+        /* ========== TRUST STATS ========== */
+        .trust-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: flex-end;
+            text-align: right;
             flex-shrink: 0;
-            width: 320px;
-            background: rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 16px;
-            padding: 24px;
             opacity: 0;
             animation: fadeInUp 0.6s ease forwards 0.9s;
-            transition: transform 0.2s, border-color 0.2s;
-            text-decoration: none;
-            color: #fff;
-            display: block;
         }
 
-        .featured-program:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-
-        .featured-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.78rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 14px;
-        }
-
-        .featured-label-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #fff;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
-        .featured-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1.3;
-            margin-bottom: 8px;
-        }
-
-        .featured-subtitle {
-            font-size: 0.78rem;
-            color: rgba(255, 255, 255, 0.5);
-            line-height: 1.5;
-            margin-bottom: 18px;
-        }
-
-        .featured-details {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 18px;
-            padding-top: 16px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .featured-detail {
+        .trust-stat {
             display: flex;
             flex-direction: column;
         }
 
-        .featured-detail-value {
-            font-size: 1rem;
-            font-weight: 700;
+        .trust-stat-number {
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            line-height: 1;
         }
 
-        .featured-detail-label {
+        .trust-stat-label {
             font-size: 0.78rem;
-            color: rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.1em;
+            margin-top: 4px;
         }
 
-        .featured-cta {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            padding: 12px;
-            background: #000;
-            color: #fff;
-            font-size: 0.78rem;
-            font-weight: 700;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-
-        .featured-cta svg {
-            width: 14px;
-            height: 14px;
-            transition: transform 0.2s;
-        }
-
-        .featured-program:hover .featured-cta svg {
-            transform: translateX(3px);
+        .trust-stat-divider {
+            width: 40px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.15);
+            align-self: flex-end;
         }
 
         /* ========== PLACEHOLDER SECTION (below hero) ========== */
@@ -426,8 +352,17 @@
                 font-size: 48px;
             }
 
-            .featured-program {
-                width: 100%;
+            .trust-stats {
+                flex-direction: row;
+                align-items: center;
+                text-align: center;
+                gap: 24px;
+            }
+
+            .trust-stat-divider {
+                width: 1px;
+                height: 40px;
+                align-self: center;
             }
 
             .nav-links {
@@ -478,8 +413,20 @@
                 justify-content: center;
             }
 
-            .featured-program {
+            .trust-stats {
+                flex-direction: row;
                 width: 100%;
+                justify-content: space-between;
+            }
+
+            .trust-stat-number {
+                font-size: 1.6rem;
+            }
+
+            .trust-stat-divider {
+                width: 1px;
+                height: 32px;
+                align-self: center;
             }
         }
     </style>
@@ -543,33 +490,23 @@
                     </div>
                 </div>
 
-                <!-- Featured Program Card -->
-                <a href="#" class="featured-program">
-                    <div class="featured-label">
-                        <span class="featured-label-dot"></span>
-                        Featured Program
+                <!-- Trust Stats -->
+                <div class="trust-stats">
+                    <div class="trust-stat">
+                        <span class="trust-stat-number" data-target="35000" data-prefix="" data-suffix="+">0</span>
+                        <span class="trust-stat-label">Facilitators Trained</span>
                     </div>
-                    <div class="featured-title">Emergent Facilitation Mastery</div>
-                    <div class="featured-subtitle">The most complete and future-proofed facilitation training on the planet.</div>
-                    <div class="featured-details">
-                        <div class="featured-detail">
-                            <span class="featured-detail-value">Online</span>
-                            <span class="featured-detail-label">Format</span>
-                        </div>
-                        <div class="featured-detail">
-                            <span class="featured-detail-value">5 Hours</span>
-                            <span class="featured-detail-label">Content</span>
-                        </div>
-                        <div class="featured-detail">
-                            <span class="featured-detail-value">$1,997</span>
-                            <span class="featured-detail-label">From</span>
-                        </div>
+                    <div class="trust-stat-divider"></div>
+                    <div class="trust-stat">
+                        <span class="trust-stat-number" data-target="15" data-prefix="" data-suffix=" Years">0</span>
+                        <span class="trust-stat-label">In Business</span>
                     </div>
-                    <div class="featured-cta">
-                        Learn More
-                        <svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10m0 0L8 3m4 4L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <div class="trust-stat-divider"></div>
+                    <div class="trust-stat">
+                        <span class="trust-stat-number" data-target="25582830" data-prefix="" data-suffix="">0</span>
+                        <span class="trust-stat-label">YouTube Views</span>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </section>
@@ -601,6 +538,41 @@
                 video.play();
             });
         }});
+
+        // Count-up animation
+        function formatNumber(n) {
+            return n.toLocaleString('en-US');
+        }
+
+        function countUp(el) {
+            var target = parseInt(el.dataset.target);
+            var suffix = el.dataset.suffix || '';
+            var duration = 1800;
+            var startTime = null;
+
+            function ease(t) {
+                return 1 - Math.pow(1 - t, 3);
+            }
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                var progress = Math.min((timestamp - startTime) / duration, 1);
+                var current = Math.floor(ease(progress) * target);
+                el.textContent = formatNumber(current) + suffix;
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    el.textContent = formatNumber(target) + suffix;
+                }
+            }
+
+            requestAnimationFrame(step);
+        }
+
+        // Start counting after the fade-in animation (0.9s delay + 0.6s animation)
+        setTimeout(function() {
+            document.querySelectorAll('.trust-stat-number').forEach(countUp);
+        }, 1500);
     </script>
 </body>
 </html>
