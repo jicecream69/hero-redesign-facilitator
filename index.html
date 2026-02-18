@@ -341,15 +341,19 @@
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 1024px) {
+            nav {
+                padding: 16px 24px 20px;
+            }
+
+            .hero {
+                padding: 0 24px 24px;
+            }
+
             .hero-content {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 24px;
+                gap: 32px;
                 padding: 0 32px 40px;
-            }
-
-            .hero-headline {
-                font-size: 48px;
             }
 
             .trust-stats {
@@ -372,61 +376,84 @@
 
         @media (max-width: 768px) {
             nav {
-                padding: 14px 20px;
+                padding: 14px 16px 16px;
             }
 
             .hero {
-                padding: 12px 12px 0;
+                padding: 0 12px 12px;
             }
 
             .hero-video-container {
                 border-radius: 14px;
-                height: auto;
-                min-height: 0;
-                aspect-ratio: auto;
-                padding-bottom: 0;
+                height: calc(100vh - 70px);
+                height: calc(100svh - 70px);
+                min-height: 550px;
             }
 
             .hero-content {
-                position: relative;
-                padding: 0 20px 32px;
-                flex-direction: column;
+                padding: 0 20px 28px;
+                gap: 40px;
             }
 
             .hero-headline {
-                font-size: 36px;
-                letter-spacing: -1px;
+                font-size: clamp(2.2rem, 10vw, 3rem);
+                letter-spacing: -0.02em;
             }
 
             .hero-subtitle {
-                font-size: 15px;
+                font-size: 1.1rem;
+                line-height: 1.5;
+                max-width: 100%;
+                margin-bottom: 24px;
             }
 
             .hero-buttons {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: stretch;
                 width: 100%;
+                gap: 10px;
             }
 
             .btn-primary, .btn-secondary {
-                width: 100%;
                 justify-content: center;
+                padding: 14px 24px;
+                font-size: 0.9rem;
             }
 
             .trust-stats {
                 flex-direction: row;
                 width: 100%;
                 justify-content: space-between;
+                gap: 12px;
             }
 
             .trust-stat-number {
-                font-size: 1.6rem;
+                font-size: 1.3rem;
+            }
+
+            .trust-stat-label {
+                font-size: 0.6rem;
+                letter-spacing: 0.05em;
             }
 
             .trust-stat-divider {
                 width: 1px;
-                height: 32px;
+                height: 28px;
                 align-self: center;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero-headline {
+                font-size: 2rem;
+            }
+
+            .trust-stat-number {
+                font-size: 1.1rem;
+            }
+
+            .trust-stat-label {
+                font-size: 0.55rem;
             }
         }
     </style>
